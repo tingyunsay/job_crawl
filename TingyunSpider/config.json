@@ -43,7 +43,14 @@
 			"Splash":0,
 			"Start":{
 				"url":[
-					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=it&keywordtype=2&pageno=1"
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=it&keywordtype=2&pageno=1",
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=计算机软件&keywordtype=2&pageno=1",
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=计算机硬件&keywordtype=2&pageno=1",
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=互联网&keywordtype=2&pageno=1",
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=电子商务&keywordtype=2&pageno=1",
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=网游&keywordtype=2&pageno=1",
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=IT-管理&keywordtype=2&pageno=1",
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=技术支持&keywordtype=2&pageno=1"
 					],
 				"Zero":{
 					"Max_Page":{
