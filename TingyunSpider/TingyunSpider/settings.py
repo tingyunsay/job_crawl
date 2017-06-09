@@ -23,8 +23,8 @@ NEWSPIDER_MODULE = 'TingyunSpider.spiders'
 
 #DOWNLOAD_DELAY = 2
 DOWNLOAD_DELAY = 0.2
-#LOG_LEVEL = 'DEBUG'
-LOG_LEVEL = 'INFO'
+LOG_LEVEL = 'DEBUG'
+#LOG_LEVEL = 'INFO'
 
 #HTTP_PROXY = 'http://localhost:8118'
 #http_proxy = 'http://localhost:8118'
@@ -57,9 +57,9 @@ ITEM_PIPELINES = {
 	#开启去重组件
 	'TingyunSpider.pipelines.FilterPipeline': 200,
 	#'TingyunSpider.pipelines.SomePipeline': 300,
-	#'TingyunSpider.pipelines.TingyunspiderPipeline': 300,
+	'TingyunSpider.pipelines.TingyunspiderPipeline': 300,
 	#'TingyunSpider.pipelines.MongoPipeline': 300
-	'TingyunSpider.pipelines.MariadbPipeline': 300
+	#'TingyunSpider.pipelines.MariadbPipeline': 300
 }
 
 #scrapyi性能优化

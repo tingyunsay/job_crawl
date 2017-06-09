@@ -29,8 +29,8 @@ class FilterPipeline(object):
 		else:
 			self.bf=BloomFilter(100000000,0.001,self.bloomname+'.bloom')
 	def process_item(self,item,spider):
-		#这里使用url和歌名作一个去重,如果在同一url取得同一首歌名,即认为其是重复数据
-		token=(str(item['url']) + str(item['song_info']))
+		#51的数据，将url和uptime看做唯一值,即认为其是重复数据
+		token=(str(item['url']) + str(item['uptime']))
 		flag=self.bf.add(token)
 		#这里False表示元素添加进去了，如果里面有相同元素返回True
 		if flag==False:
@@ -124,6 +124,8 @@ class TingyunspiderPipeline(object):
 				os.makedirs("{Date}/Index".format(Date=self.Date))
 		if not os.path.exists("{Date}/Copyright".format(Date=self.Date)):
 				os.makedirs("{Date}/Copyright".format(Date=self.Date))
+		if not os.path.exists("{Date}/Job".format(Date=self.Date)):
+				os.makedirs("{Date}/Job".format(Date=self.Date))
 		self.Concert = codecs.open('{Date}/Concert/all_Concert.json'.format(Date=self.Date),'a',encoding="utf-8")
 		self.Mv = codecs.open('{Date}/Mv/all_Mv.json'.format(Date=self.Date),'a',encoding="utf-8")
 		self.Artist = codecs.open('{Date}/Artist/all_Artist.json'.format(Date=self.Date),'a',encoding="utf-8")
@@ -137,9 +139,14 @@ class TingyunspiderPipeline(object):
 		self.Piaofang = codecs.open('{Date}/Piaofang/all_Piaofang.json'.format(Date=self.Date),'a',encoding="utf-8")
 		self.Index = codecs.open('{Date}/Index/all_Index.json'.format(Date=self.Date),'a',encoding="utf-8")
 		self.Copyright = codecs.open('{Date}/Copyright/all_Copyright.json'.format(Date=self.Date),'a',encoding="utf-8")
+		self.Job = codecs.open('{Date}/Job/all_job.json'.format(Date=self.Date),'a',encoding="utf-8")
 		
 
 	def process_item(self, item, spider):
+		if re.search('^job',''.join(item['site_name'])):
+				line = json.dumps(dict(item),ensure_ascii=False)+"\n"
+				self.Job.write(line)
+				return item
 		if re.search('concert$',''.join(item['site_name'])):
 				line = json.dumps(dict(item),ensure_ascii=False)+"\n"
 				self.Concert.write(line)

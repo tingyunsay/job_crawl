@@ -11,27 +11,7 @@ def T_P_C(site_name,max_pages,level):
 		if level == 0:
 				if site_name == "xiami_album":
 						return general_func.Total_page_circulate(max_pages,30)
-				if site_name == "tudou_show":
-						return general_func.Total_page_circulate(max_pages,84)
-				if site_name == "tudou_sp":
-						return general_func.Total_page_circulate(max_pages,84)
-				if site_name == "tudou_tv":
-						return general_func.Total_page_circulate(max_pages,90)
-				if site_name == "tudou_mv":
-						return general_func.Total_page_circulate(max_pages,40)
-				if site_name == "le_tv":
-						return general_func.Total_page_circulate(max_pages,30)
-				if site_name == "le_sp":
-						return general_func.Total_page_circulate(max_pages,30)
-				if site_name == "le_show":
-						return general_func.Total_page_circulate(max_pages,30)
-				if site_name == "yongle_concert":
-						return general_func.Total_page_circulate(max_pages,12)
-				if site_name == "tudou_music":
-						return general_func.Total_page_circulate(max_pages,40)
-				if site_name == "tudou_movie":
-						return general_func.Total_page_circulate(max_pages,90)
-				if site_name == "le_mv":
+				if site_name == "job_51":
 						return general_func.Total_page_circulate(max_pages,30)
 
 				return general_func.Total_page_circulate(max_pages,1)

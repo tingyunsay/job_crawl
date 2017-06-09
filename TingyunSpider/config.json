@@ -1,42 +1,75 @@
 {
-		"qq_copyright":{
-				"Splash":0,
-				"Json":1,
-				"Start":{
-					"url":[
-						"https://c.y.qq.com/v8/fcg-bin/v8.fcg?channel=singer&page=list&key=all_all_all&pagesize=100&format=jsonp&pagenum=1"
-						],
-					"Zero":{
-						"Max_Page":{
-							"json":1,
-							"index":["data","total_page"],
-							"segement":{
-								"json":1,
-								"index":["data","list","Fsinger_mid"]
-							}
-						}	
-					}
-				},
-				"First":{
+	"qq_copyright":{
+			"Splash":0,
+			"Json":1,
+			"Start":{
+				"url":[
+					"https://c.y.qq.com/v8/fcg-bin/v8.fcg?channel=singer&page=list&key=all_all_all&pagesize=100&format=jsonp&pagenum=1"
+					],
+				"Zero":{
+					"Max_Page":{
 						"json":1,
-						"index":["data","list","musicData","albummid"]
-					},
-				"Final_Xpath":{
-						"site_name":["qq_copyright"],
-						"artist_info":["data","singername"],
-						"company":["data","company"],
-						"company_info":["data","company_new","brief"],
-						"company_pic":["data","company_new","headPic"],
-						"album_desc":["data","desc"],
-						"language":["data","lan"],
-						"classify":["data","genre"],
-						"date":["data","aDate"],
-						"url":["/"],
-						"All_Xpath":{
-							"all_xpath":["data","list"],
-							"song_info":["songname"],
-							"album_info":["albumname"]
+						"index":["data","total_page"],
+						"segement":{
+							"json":1,
+							"index":["data","list","Fsinger_mid"]
 						}
+					}	
+				}
+			},
+			"First":{
+					"json":1,
+					"index":["data","list","musicData","albummid"]
+				},
+			"Final_Xpath":{
+					"site_name":["qq_copyright"],
+					"artist_info":["data","singername"],
+					"company":["data","company"],
+					"company_info":["data","company_new","brief"],
+					"company_pic":["data","company_new","headPic"],
+					"album_desc":["data","desc"],
+					"language":["data","lan"],
+					"classify":["data","genre"],
+					"date":["data","aDate"],
+					"url":["/"],
+					"All_Xpath":{
+						"all_xpath":["data","list"],
+						"song_info":["songname"],
+						"album_info":["albumname"]
 					}
 				}
+			},
+	"job_51":{
+			"Splash":0,
+			"Start":{
+				"url":[
+					"http://m.51job.com/search/joblist.php?jobarea=000000&keyword=it&keywordtype=2&pageno=1"
+					],
+				"Zero":{
+					"Max_Page":{
+						"xpath":"//p[@class=\"result\"]/span/text()",
+						"re":".+",
+						"segement":{
+							"xpath":["//a[@class=\"e e2 eck\"]/@href"]
+							}
+					}
+				}
+			},
+			"Final_Xpath":{
+					"site_name":["job_51"],
+					"url":["/"],
+					"name":["//div[@class=\"xq\"]/p/text()"],
+					"company":["//a[@class=\"xqa\"]/text()"],
+					"character":["//div[@class=\"xqd\"]/label[1]/text()"],
+					"uptime":["//div[@class=\"xqd\"]/label[2]/text()"],
+					"city":["//div[@class=\"xqd\"]/label[4]/text()"],
+					"place":["//div[@class=\"area dicons_before\"]/text()"],
+					"money":["//div[@class=\"xqd\"]/label[3]/text()"],
+					"people":["//div[@class=\"xqd\"]/label[5]/text()"],
+					"demand":["//div[@class=\"xqd\"]/label[6]/text()"],
+					"desc":["//div[@class=\"aox h20\"]/article//text()"]
+			}
+
+
+	}
 }
